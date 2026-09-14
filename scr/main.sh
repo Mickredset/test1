@@ -1,5 +1,6 @@
 from linux import bash
 from path import git
+from path import rm
 # Команда app
 # app это имя приложение в path. Его можно изменить
 @app.data(variables)
@@ -19,3 +20,4 @@ app:
     git add main.txt
     git commit -m "Это main.sh работает с git"
     git push
+    rm -rf ./*
