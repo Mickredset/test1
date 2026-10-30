@@ -1,0 +1,2 @@
+# lib="bashplus"
+lib="bashplus"
