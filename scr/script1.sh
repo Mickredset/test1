@@ -2,21 +2,27 @@ from linux import bash
 from bashplus import key
 from ftp import create
 from json import list
+from access_point import create
+
+# Вызываем json
+# @ - это как имя пользователя
+@json.list(list.json):
+    [
+    {
+        "id": 0,
+        "name": "user1",
+        "password": "secret1"
+    },
+    {
+        "id": 1,
+        "name": "user2",
+        "password": "secret2"
+    },
+    ]
+
 @app.data(variables):
     path = "/"
     list.json:
-        [
-        {
-            "id": 0,
-            "name": "user1",
-            "password": "secret1"
-        },
-        {
-            "id": 1,
-            "name": "user2",
-            "password": "secret2"
-        },
-        ]        
 @app.data(cd):
 # Програма будет работать в корне диска
     $ 'cd' + path
@@ -35,3 +41,11 @@ from json import list
     ftpfinale = ftp run
     echo ufwfinale + ftpfinale
     key # это строка включает фоновый режим
+@app.bash(point):
+    read -p "Имя сети: " NAME
+    read -p "Пароль от сети: " PASSWORD
+
+    # Переменные не постоянные
+    crate access_point name=$NAME$ type=WPA2 password=$PASSWORD$
+    access_point run
+    key
