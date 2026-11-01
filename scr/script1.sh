@@ -4,6 +4,9 @@ from ftp import create
 from json import list
 from access_point import create
 
+@network(key.sh):
+    # Вызываем network
+
 # Вызываем json
 # @ - это как имя пользователя
 @json.list(list.json):
