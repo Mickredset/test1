@@ -3,6 +3,7 @@ from bashplus import key
 from ftp import create
 from json import list
 from access_point import create
+from @class import class
 
 @network(key.sh):
     # Вызываем network
@@ -25,7 +26,7 @@ from access_point import create
 
 @app.data(variables):
     path = "/"
-    list.json:
+    list.json
 @app.data(cd):
 # Програма будет работать в корне диска
     $ 'cd' + path
